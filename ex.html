@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>テンプレート選択</title>
+    <style>
+        #outputBox {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            max-width: 500px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+        #copyButton {
+            margin-top: 10px;
+            padding: 10px 15px;
+            font-size: 14px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #copyButton:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>テンプレート文章を生成</h1>
+    
+    <!-- カテゴリー選択 -->
+    <form id="categoryForm">
+        <label>
+            <input type="radio" name="category" value="AbouttheExam"> 受験について
+        </label><br>
+        <label>
+            <input type="radio" name="category" value="studyMethod"> 勉強の仕方
+        </label><br>
+        <label>
+            <input type="radio" name="category" value="examStrategy"> 定期テストの対策
+        </label><br>
+        <button type="button" onclick="selectCategory()">次へ</button>
+    </form>
+
+    <!-- 詳細選択（隠された状態でスタート） -->
+    <form id="detailForm" style="display: none; margin-top: 20px;">
+        <h2>詳細を選択してください</h2>
+        <div id="detailOptions"></div>
+        <button type="button" onclick="generateTemplate()">生成する</button>
+    </form>
+
+    <!-- 出力ボックス -->
+    <div id="outputBox" style="display: none;">
+        <strong>生成されたテンプレート:</strong>
+        <p id="generatedText"></p>
+        <button id="copyButton" onclick="copyTemplate()">コピーする</button>
+    </div>
+
+    <script src="scriptex.js"></script>
+</body>
+</html>
